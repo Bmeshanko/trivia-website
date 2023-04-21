@@ -1,0 +1,39 @@
+<body>
+  <div class="content" role="main">
+    <h2> {{ question }}</h2>
+
+    <div class="card-container">
+      <button class="card card-small" (click)=selectAnswer(true)>
+        <p *ngIf="nameA">
+          {{ nameA }}
+        </p>
+      </button>
+      <button class="card card-small" (click)=selectAnswer(false)>
+        <p *ngIf="nameB">
+          {{ nameB }}
+        </p>
+      </button>
+    </div>
+
+    <div class="box">
+        <pre> {{ statusMessage }}</pre>
+    </div>
+
+    <div class="box">
+      <pre> {{ correct }}/{{ total }} - {{ percent }}%</pre>
+    </div>
+
+    <div class="card-container">
+      <button class="card card-small" (click)=recordScore()>
+        <p>
+          Record Score
+        </p>
+      </button>
+      <button class="card card-small" (click)=selectAnswer(true)>
+        <p>
+          Get Scores
+        </p>
+      </button>
+    </div>
+  </div>
+</body>
